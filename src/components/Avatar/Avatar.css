@@ -1,0 +1,92 @@
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.avatar-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.avatar-image {
+  border-radius: 20px;
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+
+@media (max-width: 480px) {
+  .avatar-container {
+    margin-bottom: 2rem;
+  }
+  
+  .avatar-container::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avatar-image:hover {
+    transform: scale(1.03);
+  }
+  
+  .avatar-container:hover::after {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .avatar-container {
+    margin-bottom: 2.5rem;
+  }
+  
+  .avatar-container::before {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .avatar-container {
+    margin-bottom: 3.5rem;
+  }
+  
+  .avatar-container::before {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .avatar-container {
+    margin-bottom: 4rem;
+  }
+  
+  .avatar-container::before {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .avatar-image:hover {
+    transform: scale(1.08);
+  }
+  
+  .avatar-container:hover::after {
+    width: 350px;
+    height: 350px;
+  }
+}
